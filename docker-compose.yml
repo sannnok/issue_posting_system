@@ -1,0 +1,8 @@
+version: '3.6'
+
+services:
+  issue_tracking_system:
+    build: .
+    ports:
+      - 80:80
+  # add more services here
