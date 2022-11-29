@@ -1,12 +1,12 @@
 import { Component } from '@angular/core'
-import { combineLatest, Observable } from 'rxjs'
+import { Observable } from 'rxjs'
 import { Post } from '../../models/post.model'
 import { select, Store } from '@ngrx/store'
 import { PostsState } from '../../store/posts.state'
 import { readPosts } from '../../store/posts.actions'
 import { selectAllTags, selectPosts } from '../../store/posts.selectors'
 import { FormControl } from '@angular/forms'
-import { filter, map, startWith } from 'rxjs/operators'
+import { map } from 'rxjs/operators'
 
 @Component({
   selector: 'app-posts-list',

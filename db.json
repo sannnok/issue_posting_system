@@ -7,8 +7,7 @@
       "tags": [
         "bug",
         "issue",
-        "epic",
-        "y"
+        "epic"
       ]
     },
     {
@@ -26,9 +25,7 @@
       "title": "Forward Accounts Planner",
       "body": "In possimus inventore dolorum voluptate ipsam corporis error. Facere repudiandae voluptatum voluptatem sunt ratione quia. Nam autem qui voluptatem a et quibusdam eum.",
       "tags": [
-        "bug",
-        "issue",
-        "feature"
+        "bug"
       ]
     },
     {
@@ -36,9 +33,7 @@
       "title": "Global Intranet Developer",
       "body": "Reiciendis praesentium aut impedit iste ut cum sit repellendus et. Et quis placeat explicabo necessitatibus eum alias numquam. Perspiciatis et eos. Aliquam odit ut officiis minima. Laboriosam qui qui saepe libero tempore.",
       "tags": [
-        "bug",
-        "issue",
-        "task"
+        "issue"
       ]
     },
     {
@@ -46,9 +41,7 @@
       "title": "Central Usability Facilitator",
       "body": "A non sunt quos molestias alias porro est reprehenderit vitae. Quia quis ab quae quia possimus repellendus quisquam. Omnis praesentium commodi voluptatem molestiae. Culpa ut quod sint.",
       "tags": [
-        "bug",
-        "issue",
-        "subtask"
+        "task"
       ]
     },
     {
@@ -56,9 +49,7 @@
       "title": "Future Integration Coordinator",
       "body": "Consectetur repudiandae reiciendis ea aut. Temporibus et dolore nam temporibus eligendi. Numquam vitae unde nisi nihil rerum quas voluptas. Iusto omnis temporibus aliquam odit est fugit. Ut vel quia ut. Dolor a dolore modi vitae illo omnis soluta.",
       "tags": [
-        "bug",
-        "issue",
-        "task"
+        "epic"
       ]
     },
     {
@@ -98,7 +89,8 @@
       "tags": [
         "bug",
         "issue",
-        "etc"
+        "etc",
+        "story"
       ]
     }
   ],
