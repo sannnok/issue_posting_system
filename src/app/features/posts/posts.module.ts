@@ -21,8 +21,8 @@ import { PostUpdateComponent } from './components/post-update/post-update.compon
   imports: [
     CommonModule,
     PostsRoutingModule,
-    SharedModule,
     ReactiveFormsModule,
+    SharedModule,
   ],
 })
 export class PostsModule {

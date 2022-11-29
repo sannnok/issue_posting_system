@@ -1,5 +1,9 @@
-.page-header-title__heading {
-  display: inline-block;
-  margin-bottom: 0;
-  margin-right: 6px;
+.page-header-title {
+  white-space: nowrap;
+  
+  &__heading {
+    display: inline-block;
+    margin-bottom: 0;
+    margin-right: 6px;
+  }
 }

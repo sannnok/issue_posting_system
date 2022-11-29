@@ -18,7 +18,7 @@ import { MatNativeDateModule, MatRippleModule } from '@angular/material/core'
 import { MatTableModule } from '@angular/material/table'
 import { MatSortModule } from '@angular/material/sort'
 import { MatPaginatorModule } from '@angular/material/paginator'
-
+import { MatChipsModule } from '@angular/material/chips';
 
 @NgModule({
   exports: [
@@ -41,6 +41,7 @@ import { MatPaginatorModule } from '@angular/material/paginator'
     MatDialogModule,
     MatNativeDateModule,
     MatRippleModule,
+    MatChipsModule,
   ],
 })
 export class MaterialModule {

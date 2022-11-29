@@ -25,7 +25,12 @@ import { NgProgressHttpModule } from 'ngx-progressbar/http';
     HttpClientModule,
 
     //  ngrx
-    StoreModule.forRoot(appReducers),
+    StoreModule.forRoot(appReducers, {
+      runtimeChecks: {
+        strictStateImmutability: false,
+        strictActionImmutability: false,
+      },
+    }),
     EffectsModule.forRoot(appEffects),
     StoreDevtoolsModule.instrument({maxAge: 25, logOnly: environment.production}),
 

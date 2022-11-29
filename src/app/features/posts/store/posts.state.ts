@@ -2,6 +2,7 @@ import { createEntityAdapter, EntityAdapter, EntityState } from '@ngrx/entity'
 import { Post } from '../models/post.model'
 
 export interface PostsState extends EntityState<Post> {
+  allPossibleTags?: string[]
 }
 
 export const postsAdapter: EntityAdapter<Post> = createEntityAdapter<Post>({
@@ -10,4 +11,5 @@ export const postsAdapter: EntityAdapter<Post> = createEntityAdapter<Post>({
 })
 
 export const initialPostsState: PostsState = postsAdapter.getInitialState({
+  allPossibleTags: [],
 })

@@ -11,6 +11,7 @@ import { PageHeaderComponent } from './components/page-header/page-header.compon
 import { PageHeaderBackComponent } from './components/page-header-back/page-header-back.component'
 import { PageHeaderTitleComponent } from './components/page-header-title/page-header-title.component'
 import { ConfirmDialogComponent } from './components/confirm-dialog/confirm-dialog.component'
+import { ChipsMultiSelectComponent } from './components/chips-multi-select/chips-multi-select.component'
 
 
 @NgModule({
@@ -26,6 +27,7 @@ import { ConfirmDialogComponent } from './components/confirm-dialog/confirm-dial
     PageHeaderComponent,
     PageHeaderBackComponent,
     PageHeaderTitleComponent,
+    ChipsMultiSelectComponent,
   ],
   entryComponents: [
     NotificationBarComponent,
@@ -42,6 +44,7 @@ import { ConfirmDialogComponent } from './components/confirm-dialog/confirm-dial
     PageHeaderComponent,
     PageHeaderBackComponent,
     PageHeaderTitleComponent,
+    ChipsMultiSelectComponent,
   ],
 })
 
