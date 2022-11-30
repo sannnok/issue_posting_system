@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core'
+import { ChangeDetectionStrategy, Component, OnDestroy, OnInit } from '@angular/core'
 import { ActivatedRoute, Params } from '@angular/router'
 import { FormBuilder, FormGroup, Validators } from '@angular/forms'
 import { Observable, Subscription } from 'rxjs'
@@ -19,6 +19,8 @@ export interface Vegetable {
   selector: 'app-post-update',
   templateUrl: './post-update.component.html',
   styleUrls: ['./post-update.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
+
 })
 export class PostUpdateComponent implements CanDeactivateComponentModel, OnInit, OnDestroy {
   private subscriptions: Subscription = new Subscription()

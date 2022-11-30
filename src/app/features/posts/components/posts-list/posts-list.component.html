@@ -3,7 +3,7 @@
     <app-page-header-back [link]="'/'" ariaLabel="Back to homepage"></app-page-header-back>
     <app-page-header-title [addons]="posts.length">Posts List</app-page-header-title>
     <div class="posts-filter">
-      <app-chips-multi-select [formControl]="filter" [options]="options$" [input]="false" (valueCahnged)="applyFilter($event)"></app-chips-multi-select>
+      <app-chips-multi-select *ngIf="(options$ | async).length" [formControl]="filter" [options]="options$" [input]="false" (valueCahnged)="applyFilter($event)"></app-chips-multi-select>
     </div>
     <button mat-icon-button color="primary" aria-label="Reload" class="ml-auto" (click)="onRefresh()">
       <mat-icon>refresh</mat-icon>

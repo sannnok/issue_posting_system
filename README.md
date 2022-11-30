@@ -5,3 +5,5 @@
 2. npm ci
 3. npm run start:dev
 4. npm run mock 
+
+![App Screenshot](./src/assets/App.jpg)

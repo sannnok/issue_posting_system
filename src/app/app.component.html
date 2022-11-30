@@ -4,18 +4,10 @@
   <mat-sidenav mode="side" #sidenav class="app-sidebar">
     <aside>
       <nav>
-        <ul>
-          <li>
-            <a [routerLink]="['/']" [routerLinkActive]="'active'">
-              Dashboard
-            </a>
-          </li>
-          <li>
-            <a [routerLink]="['posts']" [routerLinkActive]="'active'">
-              Posts
-            </a>
-          </li>
-        </ul>
+        <mat-selection-list [multiple]="false">
+          <mat-list-option [routerLink]="['/']" [routerLinkActive]="'active'" selected>Dashboard</mat-list-option>
+          <mat-list-option [routerLink]="['posts']" [routerLinkActive]="'active'">Posts</mat-list-option>
+        </mat-selection-list>
       </nav>
     </aside>
   </mat-sidenav>
