@@ -9,16 +9,6 @@
       <mat-card>
         <form [formGroup]="postForm" (submit)="onPostFormSubmit()">
           <mat-form-field class="w-100">
-            <mat-label>Choose a date</mat-label>
-            <input matInput [formControlName]="'date'" [matDatepicker]="picker">
-            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-            <mat-datepicker #picker></mat-datepicker>
-            <mat-error *ngIf="postForm.get('date').hasError('required')">
-              Date of Post is required
-            </mat-error>
-          </mat-form-field>
-
-          <mat-form-field class="w-100">
             <mat-label>Post Title</mat-label>
             <input matInput #title [formControlName]="'title'" maxlength="40">
             <mat-error *ngIf="postForm.get('title').hasError('required')">
@@ -34,6 +24,8 @@
               Body of Post is required
             </mat-error>
           </mat-form-field>
+
+          <app-chips-multi-select [formControlName]="'tags'" [options]="options$"></app-chips-multi-select>
 
           <div class="text-right">
             <button mat-button [routerLink]="['/','posts']" type="button">Cancel</button>

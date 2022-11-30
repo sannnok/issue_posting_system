@@ -50,9 +50,7 @@ export class ChipsMultiSelectComponent implements OnInit, ControlValueAccessor, 
           }
         }, [] as string[]),
         shareReplay(1),
-  );
-
-    this.items$.subscribe(it => console.log('it ', it))
+    );
   }
 
   ngOnDestroy() {
@@ -85,8 +83,7 @@ export class ChipsMultiSelectComponent implements OnInit, ControlValueAccessor, 
   }
 
   toggleSelection(chip: MatChip) {
-    if (!this.disabled) chip.toggleSelected();
-    this.cdr.detectChanges();
+    if (!this.disabled) chip.toggleSelected(true);
   }
 
   writeValue(value: string[]): void {

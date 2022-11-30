@@ -2,5 +2,5 @@
 
 export const environment = {
   production: true,
-  baseUrl: 'https://my-json-server.typicode.com/matsta25/issue_tracking_system'
+  baseUrl: 'http://ec2-44-211-197-137.compute-1.amazonaws.com/api'
 }

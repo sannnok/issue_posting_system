@@ -1,30 +1,41 @@
-import { Component } from '@angular/core'
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit } from '@angular/core'
 import { Observable } from 'rxjs'
 import { Post } from '../../models/post.model'
 import { select, Store } from '@ngrx/store'
 import { PostsState } from '../../store/posts.state'
 import { readPosts } from '../../store/posts.actions'
 import { selectAllTags, selectPosts } from '../../store/posts.selectors'
-import { FormControl } from '@angular/forms'
-import { map } from 'rxjs/operators'
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
+import { map, tap } from 'rxjs/operators'
 
 @Component({
   selector: 'app-posts-list',
   templateUrl: './posts-list.component.html',
   styleUrls: ['./posts-list.component.scss'],
-})
-export class PostsListComponent {
-  public posts$: Observable<Post[]>
-  public options$: Observable<string[]>
-  public filter = new FormControl('');
+  changeDetection: ChangeDetectionStrategy.OnPush,
 
-  constructor(private store: Store<PostsState>) {
+})
+export class PostsListComponent implements OnInit {
+  posts$: Observable<Post[]>
+  options$: Observable<string[]>
+  filter = new FormControl(['bug']);
+  // postForm: FormGroup;
+
+  constructor(private store: Store<PostsState>, private cdr: ChangeDetectorRef, private formBuilder: FormBuilder) {
     store.dispatch(readPosts())
-    this.posts$ = this.store.pipe(select(selectPosts))
-    this.options$ = this.store.pipe(select(selectAllTags));
+    this.posts$ = this.store.pipe(select(selectPosts)).pipe(tap(() => {
+      // this.postForm = this.formBuilder.group({
+      //   tags: [[], Validators.required],
+      // })
+    }))
+    this.options$ = this.store.pipe(select(selectAllTags))//.subscribe(options => this.options$ = options)
   }
 
-  public onRefresh(): void {
+  ngOnInit(): void {
+
+  }
+
+  onRefresh(): void {
     this.store.dispatch(readPosts())
   }
 
@@ -37,5 +48,7 @@ export class PostsListComponent {
       }
       return ret;
     })))
+
+    this.cdr.detectChanges();
   }
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core'
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core'
 import { ActivatedRoute, Params } from '@angular/router'
 import { Observable } from 'rxjs'
 import { PostsState } from '../../store/posts.state'
@@ -12,6 +12,8 @@ import { take } from 'rxjs/operators'
   selector: 'app-post-details',
   templateUrl: './post-details.component.html',
   styleUrls: ['./post-details.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
+
 })
 export class PostDetailsComponent implements OnInit {
   public post$: Observable<Post>

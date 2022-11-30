@@ -5,6 +5,12 @@
 
   &-sidebar {
     width: 200px;
+    mat-list-option {
+      height: 80px;
+      font-size: 17px;
+      color: darkslategrey;
+      padding: 0 16px;
+    }
   }
 
   &-content {
@@ -17,5 +23,18 @@
       display: flex;
       flex-direction: column;
     }
+
+    app-header {
+      ::ng-deep .mat-toolbar.mat-primary {
+        background: rgb(0 0 0 / 82%);
+        color: white;
+      }
+    }
+  }
+}
+
+::ng-deep {
+  button.mat-primary[mat-flat-button] {
+    background: rgb(0 0 0 / 82%);
   }
 }
