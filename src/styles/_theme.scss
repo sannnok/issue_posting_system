@@ -1,28 +1,37 @@
 // Theming Angular Material
+@use '@angular/material' as mat;
 // https://material.angular.io/guide/theming
 
 
-@import "~@angular/material/theming";
 
-$typography-config: mat-typography-config(
+$typography-config: mat.define-legacy-typography-config(
   $font-family: $font-family-base,
-  $display-2: mat-typography-level($display2-font-size, $display2-line-height, $display2-font-weight),
-  $display-1: mat-typography-level($display1-font-size, $display1-line-height, $display1-font-weight),
-  $headline: mat-typography-level($h1-font-size, $h1-line-height, $h1-font-weight),
-  $title: mat-typography-level($h2-font-size, $h2-line-height, $h2-font-weight),
-  $subheading-2: mat-typography-level($h3-font-size, $h3-line-height, $h3-font-weight),
-  $subheading-1: mat-typography-level($h4-font-size, $h4-line-height, $h4-font-weight),
-  $body-2: mat-typography-level($font-size-base, $line-height-large, $font-weight-bold),
-  $body-1: mat-typography-level($font-size-base, $line-height-base, $font-weight-normal),
-  $button: mat-typography-level($font-size-base, 1, $button-font-weight),
-  $input: mat-typography-level(inherit, $input-line-height, $font-weight-normal),
+  $display-2: mat.define-typography-level($display2-font-size, $display2-line-height, $display2-font-weight),
+  $display-1: mat.define-typography-level($display1-font-size, $display1-line-height, $display1-font-weight),
+  $headline: mat.define-typography-level($h1-font-size, $h1-line-height, $h1-font-weight),
+  $title: mat.define-typography-level($h2-font-size, $h2-line-height, $h2-font-weight),
+  $subheading-2: mat.define-typography-level($h3-font-size, $h3-line-height, $h3-font-weight),
+  $subheading-1: mat.define-typography-level($h4-font-size, $h4-line-height, $h4-font-weight),
+  $body-2: mat.define-typography-level($font-size-base, $line-height-large, $font-weight-bold),
+  $body-1: mat.define-typography-level($font-size-base, $line-height-base, $font-weight-normal),
+  $button: mat.define-typography-level($font-size-base, 1, $button-font-weight),
+  $input: mat.define-typography-level(inherit, $input-line-height, $font-weight-normal),
 );
 
 // common styles for Angular Material
-@include mat-core($typography-config);
+// TODO(v15): As of v15 mat.legacy-core no longer includes default typography styles.
+//  The following line adds:
+//    1. Default typography styles for all components
+//    2. Styles for typography hierarchy classes (e.g. .mat-headline-1)
+//  If you specify typography styles for the components you use elsewhere, you should delete this line.
+//  If you don't need the default component typographies but still want the hierarchy styles,
+//  you can delete this line and instead use:
+//    `@include mat.legacy-typography-hierarchy($typography-config);`
+@include mat.all-legacy-component-typographies($typography-config);
+@include mat.legacy-core();
 
 // theme object
-$app-theme: mat-light-theme($app-primary, $app-accent, $app-warn);
+$app-theme: mat.define-light-theme($app-primary, $app-accent, $app-warn);
 
 // theme styles for core
-@include angular-material-theme($app-theme);
+@include mat.all-legacy-component-themes($app-theme);

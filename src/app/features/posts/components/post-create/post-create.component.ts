@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core'
-import { FormBuilder, FormGroup, Validators } from '@angular/forms'
+import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms'
 import { select, Store } from '@ngrx/store'
 import { PostsState } from '../../store/posts.state'
 import { createPostsItem } from '../../store/posts.actions'
@@ -16,11 +16,11 @@ import { Observable } from 'rxjs/internal/Observable'
 
 })
 export class PostCreateComponent implements CanDeactivateComponentModel, OnInit {
-  postForm: FormGroup
+  postForm: UntypedFormGroup
   options$: Observable<string[]>;
 
   constructor(
-    private formBuilder: FormBuilder,
+    private formBuilder: UntypedFormBuilder,
     private store: Store<PostsState>,
     private notification: NotificationBarService,
   ) {
@@ -39,7 +39,7 @@ export class PostCreateComponent implements CanDeactivateComponentModel, OnInit 
     }
   }
 
-  private createPostCreateFormGroup(): FormGroup {
+  private createPostCreateFormGroup(): UntypedFormGroup {
     return this.formBuilder.group({
       date: [new Date(), Validators.required],
       title: ['', Validators.required],

@@ -1,5 +1,5 @@
 import { Injectable, NgZone } from '@angular/core'
-import { MatSnackBar, MatSnackBarRef, SimpleSnackBar, MatSnackBarConfig } from '@angular/material/snack-bar'
+import { MatLegacySnackBar as MatSnackBar, MatLegacySnackBarRef as MatSnackBarRef, LegacySimpleSnackBar as SimpleSnackBar, MatLegacySnackBarConfig as MatSnackBarConfig } from '@angular/material/legacy-snack-bar'
 import { NotificationBarComponent } from '../components/notification-bar/notification-bar.component'
 import { defaultSnackBarConfig, errorSnackBarConfig, successSnackBarConfig } from '../models/snackbar.model'
 

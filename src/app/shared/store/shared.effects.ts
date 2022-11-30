@@ -4,7 +4,7 @@ import { map, mapTo, switchMap } from 'rxjs/operators'
 import { fromEvent, merge, of } from 'rxjs'
 import { checkIsOnline, setIsOnline } from './shared.actions'
 import { NotificationBarService } from '../services/notification-bar.service'
-import { MatSnackBarRef, SimpleSnackBar } from '@angular/material/snack-bar'
+import { MatLegacySnackBarRef as MatSnackBarRef, LegacySimpleSnackBar as SimpleSnackBar } from '@angular/material/legacy-snack-bar'
 
 
 @Injectable()

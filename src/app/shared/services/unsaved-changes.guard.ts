@@ -1,6 +1,6 @@
 import { CanDeactivate } from '@angular/router'
 import { Injectable } from '@angular/core'
-import { MatDialog } from '@angular/material/dialog'
+import { MatLegacyDialog as MatDialog } from '@angular/material/legacy-dialog'
 import { Observable, of } from 'rxjs'
 import { CanDeactivateComponentModel } from '../models/can-deactivate-component.model'
 import { ConfirmDialogComponent } from '../components/confirm-dialog/confirm-dialog.component'

@@ -5,7 +5,7 @@ import { select, Store } from '@ngrx/store'
 import { PostsState } from '../../store/posts.state'
 import { readPosts } from '../../store/posts.actions'
 import { selectAllTags, selectPosts } from '../../store/posts.selectors'
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
+import { UntypedFormBuilder, UntypedFormControl, FormGroup, Validators } from '@angular/forms'
 import { map, tap } from 'rxjs/operators'
 
 @Component({
@@ -15,24 +15,15 @@ import { map, tap } from 'rxjs/operators'
   changeDetection: ChangeDetectionStrategy.OnPush,
 
 })
-export class PostsListComponent implements OnInit {
+export class PostsListComponent {
   posts$: Observable<Post[]>
   options$: Observable<string[]>
-  filter = new FormControl(['bug']);
-  // postForm: FormGroup;
+  filter = new UntypedFormControl([]);
 
-  constructor(private store: Store<PostsState>, private cdr: ChangeDetectorRef, private formBuilder: FormBuilder) {
+  constructor(private store: Store<PostsState>, private cdr: ChangeDetectorRef) {
     store.dispatch(readPosts())
-    this.posts$ = this.store.pipe(select(selectPosts)).pipe(tap(() => {
-      // this.postForm = this.formBuilder.group({
-      //   tags: [[], Validators.required],
-      // })
-    }))
-    this.options$ = this.store.pipe(select(selectAllTags))//.subscribe(options => this.options$ = options)
-  }
-
-  ngOnInit(): void {
-
+    this.posts$ = this.store.pipe(select(selectPosts))
+    this.options$ = this.store.pipe(select(selectAllTags))
   }
 
   onRefresh(): void {

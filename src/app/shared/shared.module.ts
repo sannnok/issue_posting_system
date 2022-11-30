@@ -15,37 +15,33 @@ import { ChipsMultiSelectComponent } from './components/chips-multi-select/chips
 
 
 @NgModule({
-  imports: [
-    CommonModule,
-    MaterialModule,
-  ],
-  declarations: [
-    BackButtonDirective,
-    InputDebounceDirective,
-    NotificationBarComponent,
-    ConfirmDialogComponent,
-    PageHeaderComponent,
-    PageHeaderBackComponent,
-    PageHeaderTitleComponent,
-    ChipsMultiSelectComponent,
-  ],
-  entryComponents: [
-    NotificationBarComponent,
-    ConfirmDialogComponent,
-  ],
-  providers: [
-    ...sharedInterceptorProviders,
-    UnsavedChangesGuard,
-  ],
-  exports: [
-    MaterialModule,
-    BackButtonDirective,
-    InputDebounceDirective,
-    PageHeaderComponent,
-    PageHeaderBackComponent,
-    PageHeaderTitleComponent,
-    ChipsMultiSelectComponent,
-  ],
+    imports: [
+        CommonModule,
+        MaterialModule,
+    ],
+    declarations: [
+        BackButtonDirective,
+        InputDebounceDirective,
+        NotificationBarComponent,
+        ConfirmDialogComponent,
+        PageHeaderComponent,
+        PageHeaderBackComponent,
+        PageHeaderTitleComponent,
+        ChipsMultiSelectComponent,
+    ],
+    providers: [
+        ...sharedInterceptorProviders,
+        UnsavedChangesGuard,
+    ],
+    exports: [
+        MaterialModule,
+        BackButtonDirective,
+        InputDebounceDirective,
+        PageHeaderComponent,
+        PageHeaderBackComponent,
+        PageHeaderTitleComponent,
+        ChipsMultiSelectComponent,
+    ]
 })
 
 export class SharedModule {

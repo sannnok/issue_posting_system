@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, OnDestroy, OnInit } from '@angular/core'
 import { ActivatedRoute, Params } from '@angular/router'
-import { FormBuilder, FormGroup, Validators } from '@angular/forms'
+import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms'
 import { Observable, Subscription } from 'rxjs'
 import { select, Store } from '@ngrx/store'
 import { CanDeactivateComponentModel } from '../../../../shared/models/can-deactivate-component.model'
@@ -9,7 +9,7 @@ import { deletePostsItem, readPostsItem, updatePostsItem } from '../../store/pos
 import { Post } from '../../models/post.model'
 import { selectAllTags, selectPostById } from '../../store/posts.selectors'
 import { NotificationBarService } from '../../../../shared/services/notification-bar.service'
-import { MatChip } from '@angular/material/chips'
+import { MatLegacyChip as MatChip } from '@angular/material/legacy-chips'
 
 export interface Vegetable {
   name: string;
@@ -24,14 +24,14 @@ export interface Vegetable {
 })
 export class PostUpdateComponent implements CanDeactivateComponentModel, OnInit, OnDestroy {
   private subscriptions: Subscription = new Subscription()
-  postForm: FormGroup
+  postForm: UntypedFormGroup
   post$: Observable<Post>
   options$: Observable<string[]>;
 
 
   constructor(
     private activatedRoute: ActivatedRoute,
-    private formBuilder: FormBuilder,
+    private formBuilder: UntypedFormBuilder,
     private store: Store<PostsState>,
     private notification: NotificationBarService,
   ) {
@@ -82,7 +82,7 @@ export class PostUpdateComponent implements CanDeactivateComponentModel, OnInit,
     this.subscriptions.unsubscribe()
   }
 
-  private createPostFormGroup(post: Post): FormGroup {
+  private createPostFormGroup(post: Post): UntypedFormGroup {
     return this.formBuilder.group({
       id: [post ? post.id : null, Validators.required],
       title: [post ? post.title : '', Validators.required],

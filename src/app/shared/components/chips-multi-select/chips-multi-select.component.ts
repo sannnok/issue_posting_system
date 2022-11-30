@@ -1,7 +1,7 @@
 import { COMMA, ENTER } from '@angular/cdk/keycodes';
 import { Component, OnInit, ChangeDetectionStrategy, ViewChild, AfterViewInit, OnDestroy, Input, ChangeDetectorRef, Output, EventEmitter } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
-import { MatChip, MatChipInputEvent, MatChipList } from '@angular/material/chips';
+import { MatLegacyChip as MatChip, MatLegacyChipInputEvent as MatChipInputEvent, MatLegacyChipList as MatChipList } from '@angular/material/legacy-chips';
 import { merge, Observable, ReplaySubject } from 'rxjs';
 import { Subject } from 'rxjs/internal/Subject';
 import { map, scan, shareReplay, takeUntil } from 'rxjs/operators'
