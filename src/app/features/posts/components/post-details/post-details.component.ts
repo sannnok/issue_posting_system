@@ -17,6 +17,7 @@ import { take } from 'rxjs/operators'
 })
 export class PostDetailsComponent implements OnInit {
   public post$: Observable<Post>
+  postId: string;
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -25,10 +26,9 @@ export class PostDetailsComponent implements OnInit {
   }
 
   public ngOnInit(): void {
-    this.activatedRoute.params.subscribe((params: Params) => {
-      this.post$ = this.store.pipe(select(selectPostById(params.id)))
-      this.post$.pipe(take(1)).subscribe(post => !post && this.store.dispatch(readPostsItem({id: params.id})))
-    })
+    this.postId = this.activatedRoute.snapshot.params['id'];
+    this.post$ = this.store.pipe(select(selectPostById(this.postId)))
+    this.post$.pipe(take(1)).subscribe(post => !post && this.store.dispatch(readPostsItem({id: this.postId})))
   }
 
   public delete(postId) {

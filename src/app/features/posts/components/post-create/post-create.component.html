@@ -28,8 +28,8 @@
           <app-chips-multi-select [formControlName]="'tags'" [options]="options$"></app-chips-multi-select>
 
           <div class="text-right">
-            <button mat-button [routerLink]="['/','posts']" type="button">Cancel</button>
-            <button mat-flat-button color="primary" type="submit">Submit</button>
+            <button test-id="cancel-btn" mat-button [routerLink]="['/','posts']" type="button">Cancel</button>
+            <button test-id="submit-btn" mat-flat-button color="primary" type="submit">Submit</button>
           </div>
         </form>
       </mat-card>

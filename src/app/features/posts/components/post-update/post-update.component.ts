@@ -9,7 +9,6 @@ import { deletePostsItem, readPostsItem, updatePostsItem } from '../../store/pos
 import { Post } from '../../models/post.model'
 import { selectAllTags, selectPostById } from '../../store/posts.selectors'
 import { NotificationBarService } from '../../../../shared/services/notification-bar.service'
-import { MatLegacyChip as MatChip } from '@angular/material/legacy-chips'
 
 export interface Vegetable {
   name: string;
@@ -37,23 +36,19 @@ export class PostUpdateComponent implements CanDeactivateComponentModel, OnInit,
   ) {
   }
 
-  toggleSelection(chip: MatChip) {
-    chip.toggleSelected();
-  }
-
   ngOnInit(): void {
-    this.activatedRoute.params.subscribe((params: Params) => {
-      this.post$ = this.store.pipe(select(selectPostById(params.id)))
+    const postId = this.activatedRoute.snapshot.paramMap.get('id');
+    console.log('id::::: ', postId)
+    this.post$ = this.store.pipe(select(selectPostById(postId)))
 
-      this.subscriptions.add(
-        this.post$.subscribe(post => {
-          this.postForm = this.createPostFormGroup(post)
-          if (!post) {
-            this.store.dispatch(readPostsItem({id: params.id}))
-          }
-        }),
-      )
-    })
+    this.subscriptions.add(
+      this.post$.subscribe(post => {
+        this.postForm = this.createPostFormGroup(post)
+        if (!post) {
+          this.store.dispatch(readPostsItem({id: postId}))
+        }
+      }),
+    )
     this.options$ = this.store.pipe(select(selectAllTags));
   }
 
@@ -82,7 +77,7 @@ export class PostUpdateComponent implements CanDeactivateComponentModel, OnInit,
     this.subscriptions.unsubscribe()
   }
 
-  private createPostFormGroup(post: Post): UntypedFormGroup {
+  createPostFormGroup(post: Post): UntypedFormGroup {
     return this.formBuilder.group({
       id: [post ? post.id : null, Validators.required],
       title: [post ? post.title : '', Validators.required],

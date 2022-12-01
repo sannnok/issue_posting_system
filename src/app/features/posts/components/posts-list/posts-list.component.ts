@@ -20,7 +20,7 @@ export class PostsListComponent {
   options$: Observable<string[]>
   filter = new UntypedFormControl([]);
 
-  constructor(private store: Store<PostsState>, private cdr: ChangeDetectorRef) {
+  constructor(private store: Store<PostsState>, public cdr: ChangeDetectorRef) {
     store.dispatch(readPosts())
     this.posts$ = this.store.pipe(select(selectPosts))
     this.options$ = this.store.pipe(select(selectAllTags))
@@ -31,14 +31,17 @@ export class PostsListComponent {
   }
 
   applyFilter(filterTags: string[]) {
-    this.posts$ = this.store.pipe(select(selectPosts), map(posts => posts.filter(post => {
-      if (!filterTags.length) return true;
-      let ret = true;
-      for (let filterTag of filterTags) {
-        if (!post.tags.includes(filterTag)) ret = false;
-      }
-      return ret;
-    })))
+    this.posts$ = this.store.pipe(
+      select(selectPosts),
+      map(posts => posts.filter(post => {
+        if (!filterTags.length) return true;
+        let ret = true;
+        for (let filterTag of filterTags) {
+          if (!post.tags.includes(filterTag)) ret = false;
+        }
+        return ret;
+      })
+    ))
 
     this.cdr.detectChanges();
   }

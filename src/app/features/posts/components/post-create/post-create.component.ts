@@ -29,6 +29,7 @@ export class PostCreateComponent implements CanDeactivateComponentModel, OnInit 
   public ngOnInit(): void {
     this.postForm = this.createPostCreateFormGroup()
     this.options$ = this.store.pipe(select(selectAllTags));
+    console.log('PostForm: ', this.postForm.controls['title'])
   }
 
   public onPostFormSubmit(): void {
@@ -42,7 +43,7 @@ export class PostCreateComponent implements CanDeactivateComponentModel, OnInit 
   private createPostCreateFormGroup(): UntypedFormGroup {
     return this.formBuilder.group({
       date: [new Date(), Validators.required],
-      title: ['', Validators.required],
+      title: ['dd', Validators.required],
       body: ['', Validators.required],
       tags: [[]],
     })

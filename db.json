@@ -13,7 +13,7 @@
     {
       "id": "b9eee5f3-e0a0-4b80-88cd-cec55e440ab7",
       "title": "The second test item",
-      "body": "It accepts simple html tags like &lt;p&gt;&lt;strong&gt;Test string!&lt;/strong&gt;&lt;/p&gt;: <p><em><strong>Test string!</strong></em></p>",
+      "body": "It accepts simple html tags like &lt;p class=\"link-tag\"&gt;&lt;strong&gt;Test string!&lt;/strong&gt;&lt;/p&gt;: <p><em><strong>Test string!</strong></em></p>",
       "tags": [
         "bug",
         "issue",
