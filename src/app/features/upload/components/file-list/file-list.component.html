@@ -1,0 +1,29 @@
+<div *ngIf="files$ | async as files">
+  <app-page-header>
+    <app-page-header-back [link]="'/'" ariaLabel="Back to homepage"></app-page-header-back>
+    <app-page-header-title [addons]="files.length">File List</app-page-header-title>
+    <!-- <div class="posts-filter">
+      <app-chips-multi-select *ngIf="(options$ | async).length" [formControl]="filter" [options]="options$" [input]="false" (valueCahnged)="applyFilter($event)"></app-chips-multi-select>
+    </div> -->
+    <button mat-icon-button color="primary" aria-label="Reload" class="ml-auto" (click)="onRefresh()">
+      <mat-icon>refresh</mat-icon>
+    </button>
+  </app-page-header>
+
+  <div class="floating-action">
+    <button mat-fab color="primary" aria-label="Add new item" [routerLink]="['/','upload','create']">
+      <mat-icon>add</mat-icon>
+    </button>
+  </div>
+
+  <div class="page-content">
+    <mat-list class="pt-0">
+      <mat-list-item test-id="list-item" *ngFor="let file of files" mat-ripple [routerLink]="['/','files', file.id]">
+        <mat-icon mat-list-icon color="accent">event_note</mat-icon>
+        <div mat-line>{{file.name}}</div>
+        <div mat-line>{{file.id | date }}</div>
+        <div mat-line>{{file.size}}</div>
+      </mat-list-item>
+    </mat-list>
+  </div>
+</div>

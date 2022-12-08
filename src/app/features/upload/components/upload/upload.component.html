@@ -12,7 +12,7 @@
   </div>
   <div #preview class="preview">
     <h2 *ngIf="fileName">{{ fileName }}</h2>
-    <p>{{ previewValue }}</p>
+    <pre>{{ previewValue }}</pre>
   </div>
   <div class="submit">
     <button mat-button (click)="saveFile()">Submit</button>

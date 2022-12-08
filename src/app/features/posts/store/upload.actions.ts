@@ -16,7 +16,7 @@ export const readFilesFail = createAction('[Files] Read Files Fail')
 
 // Read File
 export const readFilesItem = createAction('[Files] Read File', props<{ id: string }>())
-export const readFilesItemSuccess = createAction('[Files] Read File Success', props<{ File: IFile }>())
+export const readFilesItemSuccess = createAction('[Files] Read File Success', props<{ file: IFile }>())
 export const readFilesItemFail = createAction('[Files] Read File Fail')
 
 // Update File

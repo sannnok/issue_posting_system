@@ -1,5 +1,6 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { Store } from '@ngrx/store';
+import { IFile } from 'src/app/features/posts/models/file.model';
 import { createFilesItem } from 'src/app/features/posts/store/upload.actions';
 import { FilesState } from 'src/app/features/posts/store/upload.state';
 
@@ -37,6 +38,18 @@ export class UploadComponent {
 
   saveFile() {
     if (!this.selectedFile) return;
-    this.store.dispatch(createFilesItem({ file: {...this.selectedFile, id: this.selectedFile.lastModified.toString()} }))
+
+    this.selectedFile.text().then(t => {
+      const saveFile: IFile = {
+        id: Date.now().toString(),
+        name: this.selectedFile.name,
+        size: this.selectedFile.size,
+        lastModified: this.selectedFile.lastModified,
+        type: this.selectedFile.type,
+        content: t,
+      }
+
+      this.store.dispatch(createFilesItem({ file: saveFile }))
+    })
   }
 }
