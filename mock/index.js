@@ -3,6 +3,7 @@ const faker = require('faker');
 module.exports = () => {
   const data = {
     posts: [],
+    files: [],
     'err-logs': []
   };
 

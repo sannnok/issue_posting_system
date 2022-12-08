@@ -11,9 +11,13 @@ const routes: Routes = [
     component: DashboardComponent,
     pathMatch: 'full',
   },
+  // {
+  //   path: 'posts',
+  //   loadChildren: () => import('./features/posts/posts.module').then(m => m.PostsModule),
+  // },
   {
-    path: 'posts',
-    loadChildren: () => import('./features/posts/posts.module').then(m => m.PostsModule),
+    path: 'upload',
+    loadChildren: () => import('./features/upload/upload.module').then(m => m.UploadModule),
   },
   {
     path: '**',

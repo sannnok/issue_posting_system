@@ -1,0 +1,16 @@
+.form {
+  padding: 16px;
+
+  .preview {
+    padding-top: 16px;
+
+    p {
+      background: lightgray;
+      padding: 16px;
+    }
+  }
+
+  .submit {
+    float: right;
+  }
+}
