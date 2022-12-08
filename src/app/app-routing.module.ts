@@ -8,6 +8,11 @@ import { NotificationPageComponent, NotificationPageData } from './core/componen
 const routes: Routes = [
   {
     path: '',
+    redirectTo: 'dashboard',
+    pathMatch: 'full',
+  },
+  {
+    path: 'dashboard',
     component: DashboardComponent,
     pathMatch: 'full',
   },

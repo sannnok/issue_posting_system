@@ -2,9 +2,8 @@
 
 ## Project development run steps
 # Use Node v16
-1. git clone https://github.com/sannnok/issue_posting_system.git
+1. git clone https://github.com/sannnok/custom_file_upload.git
 2. npm ci
-3. npm run start:dev
-4. npm run mock 
+3. npm run concurrently
 
 ![App Screenshot](./src/assets/App.jpg)

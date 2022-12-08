@@ -37,4 +37,21 @@
   button.mat-primary[mat-flat-button] {
     background: rgb(0 0 0 / 82%);
   }
+  .mat-list-option.mat-list-single-selected-option {
+    background-color: unset;
+  }
+}
+
+.router-active-link {
+  background: rgba(0, 0, 0, 0.12);
+  background-image: initial;
+  background-position-x: initial;
+  background-position-y: initial;
+  background-size: initial;
+  background-repeat-x: initial;
+  background-repeat-y: initial;
+  background-attachment: initial;
+  background-origin: initial;
+  background-clip: initial;
+  background-color: rgba(0, 0, 0, 0.12);
 }

@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component } from '@angular/core';
+import { AfterViewInit, ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { select, Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { IFile } from 'src/app/features/posts/models/file.model';
@@ -22,5 +22,7 @@ export class FileListComponent {
 
   onRefresh(): void {
     this.store.dispatch(readFiles())
+    this.files$ = this.store.pipe(select(selectFiles))
+    this.cdr.detectChanges();
   }
 }

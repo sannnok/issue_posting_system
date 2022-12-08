@@ -5,7 +5,8 @@ import { UploadRoutingModule } from './upload-routing.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { FileListComponent } from './components/file-list/file-list.component';
-import { CreateComponent } from './components/create/create.component';
+import { FilesComponent } from './components/files/files.component';
+import { FileDetailsComponent } from './components/file-details/file-details.component';
 
 
 
@@ -13,7 +14,8 @@ import { CreateComponent } from './components/create/create.component';
   declarations: [
     UploadComponent,
     FileListComponent,
-    CreateComponent
+    FilesComponent,
+    FileDetailsComponent
   ],
   imports: [
     CommonModule,

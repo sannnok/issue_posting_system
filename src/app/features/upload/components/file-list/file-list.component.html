@@ -1,6 +1,6 @@
 <div *ngIf="files$ | async as files">
   <app-page-header>
-    <app-page-header-back [link]="'/'" ariaLabel="Back to homepage"></app-page-header-back>
+    <app-page-header-back [link]="['/dashboard']" ariaLabel="Back to homepage"></app-page-header-back>
     <app-page-header-title [addons]="files.length">File List</app-page-header-title>
     <!-- <div class="posts-filter">
       <app-chips-multi-select *ngIf="(options$ | async).length" [formControl]="filter" [options]="options$" [input]="false" (valueCahnged)="applyFilter($event)"></app-chips-multi-select>
@@ -18,11 +18,11 @@
 
   <div class="page-content">
     <mat-list class="pt-0">
-      <mat-list-item test-id="list-item" *ngFor="let file of files" mat-ripple [routerLink]="['/','files', file.id]">
+      <mat-list-item test-id="list-item" *ngFor="let file of files" mat-ripple [routerLink]="['/','upload', file.id]">
         <mat-icon mat-list-icon color="accent">event_note</mat-icon>
-        <div mat-line>{{file.name}}</div>
-        <div mat-line>{{file.id | date }}</div>
-        <div mat-line>{{file.size}}</div>
+        <div mat-line>{{ file.name }}</div>
+        <p class="property-date">{{ file.id | date }}</p>
+        <div class="property-size"mat-line>{{ file.size | bytes }}</div>
       </mat-list-item>
     </mat-list>
   </div>

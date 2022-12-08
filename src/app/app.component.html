@@ -4,10 +4,10 @@
   <mat-sidenav mode="side" #sidenav class="app-sidebar">
     <aside>
       <nav>
-        <mat-selection-list [multiple]="false">
-          <mat-list-option [routerLink]="['/']" [routerLinkActive]="'active'" selected>Dashboard</mat-list-option>
-          <!-- <mat-list-option [routerLink]="['posts']" [routerLinkActive]="'active'">Posts</mat-list-option> -->
-          <mat-list-option [routerLink]="['upload']" [routerLinkActive]="'active'">Upload</mat-list-option>
+        <mat-selection-list [multiple]="false" #menu>
+          <mat-list-option [routerLink]="['/dashboard']" [routerLinkActive]="['router-active-link']">Dashboard</mat-list-option>
+          <!-- <mat-list-option [routerLink]="['posts']" [routerLinkActive]="['router-active-link']">Posts</mat-list-option> -->
+          <mat-list-option [routerLink]="['upload']" [routerLinkActive]="['router-active-link']">Upload</mat-list-option>
         </mat-selection-list>
       </nav>
     </aside>

@@ -5,7 +5,9 @@ export interface FilesState extends EntityState<IFile> {
 }
 
 export const filesAdapter: EntityAdapter<IFile> = createEntityAdapter<IFile>({
-  selectId: (item: IFile) => item.id,
+  selectId: (item: IFile) => {
+    return item.id
+  },
   sortComparer: false,
 })
 

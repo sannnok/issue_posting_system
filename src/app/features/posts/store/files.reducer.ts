@@ -1,5 +1,5 @@
 import { Action, createReducer, on } from '@ngrx/store'
-import { createFilesItemSuccess, readFilesSuccess } from './upload.actions'
+import { createFilesItemSuccess, deleteFilesItem, readFilesSuccess } from './upload.actions'
 import { filesAdapter, FilesState, initialFilesState } from './upload.state'
 
 const reducer = createReducer(
@@ -10,6 +10,7 @@ const reducer = createReducer(
   on(readFilesSuccess, (state, { files }) => {
     return filesAdapter.setAll(files, state)
   }),
+  on(deleteFilesItem, (state, { id }) => filesAdapter.removeOne(id, state)),
 )
 
 export function filesReducer(state: FilesState, action: Action) {

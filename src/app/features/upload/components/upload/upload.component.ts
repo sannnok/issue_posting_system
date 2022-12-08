@@ -29,11 +29,6 @@ export class UploadComponent {
     })
     this.fileName = file.name;
     this.selectedFile = file;
-
-    file.arrayBuffer().then( arrayBuffer => {
-      const blob = new Blob([new Uint8Array(arrayBuffer)], { type: file.type });
-      blob.text().then(console.log);
-    })
   }
 
   saveFile() {
