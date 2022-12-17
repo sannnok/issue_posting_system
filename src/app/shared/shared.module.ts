@@ -13,6 +13,8 @@ import { PageHeaderTitleComponent } from './components/page-header-title/page-he
 import { ConfirmDialogComponent } from './components/confirm-dialog/confirm-dialog.component'
 import { ChipsMultiSelectComponent } from './components/chips-multi-select/chips-multi-select.component'
 import { BytesPipe } from './pipes/byte.pipe'
+import { SafePipe } from './pipes/safe-pipe'
+import { IframePageComponent } from './components/wrap-iframe/app-iframe.component'
 
 
 @NgModule({
@@ -29,7 +31,9 @@ import { BytesPipe } from './pipes/byte.pipe'
         PageHeaderBackComponent,
         PageHeaderTitleComponent,
         ChipsMultiSelectComponent,
+        IframePageComponent,
         BytesPipe,
+        SafePipe,
     ],
     providers: [
         ...sharedInterceptorProviders,
@@ -43,7 +47,9 @@ import { BytesPipe } from './pipes/byte.pipe'
         PageHeaderBackComponent,
         PageHeaderTitleComponent,
         ChipsMultiSelectComponent,
+        IframePageComponent,
         BytesPipe,
+        SafePipe,
     ]
 })
 

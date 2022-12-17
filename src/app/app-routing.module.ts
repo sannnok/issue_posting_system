@@ -25,6 +25,22 @@ const routes: Routes = [
     loadChildren: () => import('./features/upload/upload.module').then(m => m.UploadModule),
   },
   {
+    path: 'serverless-render',
+    loadChildren: () => import('./features/serverless-render/serverless-render.module').then(m => m.ServerlessRenderModule),
+  },
+  {
+    path: 'perlin-noise',
+    loadChildren: () => import('./features/perlin-noise/perlin-noise.module').then(m => m.PerlinNoiseModule),
+  },
+  {
+    path: 'gestures',
+    loadChildren: () => import('./features/gestures/gestures.module').then(m => m.GesturesModule),
+  },
+  {
+    path: 'virtual-scroll',
+    loadChildren: () => import('./features/virtual-scroll/virtual-scroll.module').then(m => m.VirtualScrollModule),
+  },
+  {
     path: '**',
     component: NotificationPageComponent,
     data: ({

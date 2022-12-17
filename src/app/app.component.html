@@ -5,9 +5,13 @@
     <aside>
       <nav>
         <mat-selection-list [multiple]="false" #menu>
-          <mat-list-option [routerLink]="['/dashboard']" [routerLinkActive]="['router-active-link']">Dashboard</mat-list-option>
+          <mat-list-option [routerLink]="['dashboard']" [routerLinkActive]="['router-active-link']">Dashboard</mat-list-option>
           <mat-list-option [routerLink]="['posts']" [routerLinkActive]="['router-active-link']">Posts</mat-list-option>
           <mat-list-option [routerLink]="['upload']" [routerLinkActive]="['router-active-link']">Upload</mat-list-option>
+          <mat-list-option [routerLink]="['serverless-render']" [routerLinkActive]="['router-active-link']">Serverless Render</mat-list-option>
+          <mat-list-option [routerLink]="['perlin-noise']" [routerLinkActive]="['router-active-link']">Perlin Noise</mat-list-option>
+          <mat-list-option [routerLink]="['gestures']" [routerLinkActive]="['router-active-link']">Swipe Gestures</mat-list-option>
+          <mat-list-option [routerLink]="['virtual-scroll']" [routerLinkActive]="['router-active-link']">Virtual Scroll</mat-list-option>
         </mat-selection-list>
       </nav>
     </aside>
