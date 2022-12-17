@@ -3,7 +3,7 @@
 ## Project development run steps
 1. git clone https://github.com/sannnok/issue_posting_system.git
 2. npm ci
-3. npm run start:dev
-4. npm run mock 
+3. npm run concurrently
 
-![App Screenshot](./src/assets/App.jpg)
+![App Screenshot](./src/assets/App1.jpg)
+![App Screenshot2](./src/assets/App2.jpg)

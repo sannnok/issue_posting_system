@@ -8,12 +8,21 @@ import { NotificationPageComponent, NotificationPageData } from './core/componen
 const routes: Routes = [
   {
     path: '',
+    redirectTo: 'dashboard',
+    pathMatch: 'full',
+  },
+  {
+    path: 'dashboard',
     component: DashboardComponent,
     pathMatch: 'full',
   },
   {
     path: 'posts',
     loadChildren: () => import('./features/posts/posts.module').then(m => m.PostsModule),
+  },
+  {
+    path: 'upload',
+    loadChildren: () => import('./features/upload/upload.module').then(m => m.UploadModule),
   },
   {
     path: '**',

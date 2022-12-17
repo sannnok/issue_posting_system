@@ -1,6 +1,6 @@
 <div *ngIf="posts$ | async as posts">
   <app-page-header>
-    <app-page-header-back [link]="'/'" ariaLabel="Back to homepage"></app-page-header-back>
+    <app-page-header-back [link]="'/dashboard'" ariaLabel="Back to homepage"></app-page-header-back>
     <app-page-header-title [addons]="posts.length">Posts List</app-page-header-title>
     <div class="posts-filter">
       <app-chips-multi-select *ngIf="(options$ | async).length" [formControl]="filter" [options]="options$" [input]="false" (valueCahnged)="applyFilter($event)"></app-chips-multi-select>

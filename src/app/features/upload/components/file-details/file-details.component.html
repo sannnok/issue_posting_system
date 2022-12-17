@@ -1,0 +1,14 @@
+<div *ngIf="file$ | async as file">
+  <app-page-header>
+    <app-page-header-back [link]="'/upload/list'" ariaLabel="Back to Posts List"></app-page-header-back>
+    <app-page-header-title>{{ file.title }}</app-page-header-title>
+    <button mat-icon-button color="primary" aria-label="Edit File" [routerLink]="['/','upload', file.id, 'update']" class="ml-auto">
+      <mat-icon>edit</mat-icon>
+    </button>
+    <button mat-icon-button color="warn" aria-label="Delete File" (click)="delete(file.id)">
+      <mat-icon>delete</mat-icon>
+    </button>
+  </app-page-header>
+
+  <pre test-id="page-content" class="page-content" [innerHTML]="file.content"></pre>
+</div>

@@ -93,5 +93,23 @@
       ]
     }
   ],
+  "files": [
+    {
+      "id": "1670539079750",
+      "name": "hello.txt",
+      "size": 6,
+      "lastModified": 1670522165889,
+      "type": "text/plain",
+      "content": "Hello!"
+    },
+    {
+      "id": "1671298168069",
+      "name": "task.txt",
+      "size": 654,
+      "lastModified": 1670530909710,
+      "type": "text/plain",
+      "content": "Test Task \n\n\nImplement a file-reader app using angular 2+, any css framework.\n\n1) File upload page that lets the user pick a file by clicking on the “Choose a file” button or (optional) by dropping a file to a drop area on the page.\nAccept only plain/text files.\n\n2) Uploaded file should be readable - allow to see all file contents in the UI. Make sure to not load entire file into the memory.\n\n3) Page with a list of files uploaded by a user with meta-info (filename, upload datetime, file size)You are able to use any libraries and code samples from the internet or from your own codebase during the task execution.\n​\n\nTime limit: 2h\n\nGood luck!"
+    }
+  ],
   "err-logs": []
 }
